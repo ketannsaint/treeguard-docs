@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Security | Verified Issue Trees</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html">
+          <img src="treeguard-logo.svg" alt="" />
+          <span>Verified Issue Trees</span>
+        </a>
+        <nav aria-label="Documentation">
+          <a href="index.html">Documentation</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="security.html" aria-current="page">Security</a>
+          <a href="deletion.html">Data deletion</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Forge-hosted by design</p>
+          <h1>Security</h1>
+          <p>
+            How TreeGuard limits access, data movement, and partial failure.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Architecture</h2>
+        <p>
+          TreeGuard runs entirely on Atlassian Forge. Compute and persistent KVS
+          storage are provided by Atlassian. The app declares no remotes or
+          external egress and uses no external analytics, advertising, or AI
+          services.
+        </p>
+      </section>
+      <section>
+        <h2>Authorization and isolation</h2>
+        <p>
+          Jira requests run as the current user and remain subject to that
+          user's Jira permissions. Protected operations verify the required
+          project permissions. Private execution receipts are isolated with a
+          project-scoped SHA-256 owner key; the raw Atlassian account ID is not
+          persisted.
+        </p>
+      </section>
+      <section>
+        <h2>Data protection</h2>
+        <p>
+          Templates and bounded execution receipts stay in Forge KVS. Receipt
+          data expires after 180 days, users can delete their own run history,
+          and project administrators can delete shared templates. Persistent
+          Forge storage follows the host Jira site's supported data-residency
+          location and migration.
+        </p>
+      </section>
+      <section>
+        <h2>Failure handling</h2>
+        <p>
+          Tree creation uses preflight checks, a durable journal, sequential
+          Jira mutations, exact read-back verification, and reverse-order
+          cleanup. Because Jira issue creation is not transactional, TreeGuard
+          reports any residual issue requiring manual cleanup rather than
+          claiming guaranteed rollback.
+        </p>
+      </section>
+      <section>
+        <h2>Report a vulnerability</h2>
+        <p>
+          Send reports privately to
+          <a href="mailto:leo.saint.dior@gmail.com">leo.saint.dior@gmail.com</a
+          >. Include reproducible steps and impact, but do not access data that
+          is not yours or send passwords, API tokens, or unrelated Jira content.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div><p>No compliance certification is claimed for this app.</p></div>
+    </footer>
+  </body>
+</html>
