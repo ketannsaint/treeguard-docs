@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Documentation and support for Verified Issue Tree Templates for Jira."
+    />
+    <title>Verified Issue Tree Templates for Jira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html">
+          <img src="treeguard-logo.svg" alt="" />
+          <span>Verified Issue Trees</span>
+        </a>
+        <nav aria-label="Documentation">
+          <a href="index.html" aria-current="page">Documentation</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="deletion.html">Data deletion</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Leopold Saint</p>
+          <h1>Verified Issue Tree Templates for Jira</h1>
+          <p>
+            Create one root issue and up to five subtasks with project-aware
+            preflight checks, exact verification, and visible cleanup outcomes.
+          </p>
+        </div>
+        <img src="treeguard-logo.svg" alt="Verified issue tree" />
+      </div>
+    </header>
+    <main>
+      <div class="notice">
+        <strong>Marketplace release in preparation</strong>
+        Product documentation and policies for the upcoming release.
+      </div>
+      <section class="feature-grid" aria-label="Core capabilities">
+        <article class="feature">
+          <h2>Preflight</h2>
+          <p>
+            Check issue types, hierarchy, required fields, labels, and
+            configured options against the live Jira project before mutation.
+          </p>
+        </article>
+        <article class="feature">
+          <h2>Verify</h2>
+          <p>
+            Read every created issue back from Jira and verify configured fields
+            and exact parent relationships.
+          </p>
+        </article>
+        <article class="feature">
+          <h2>Report outcomes</h2>
+          <p>
+            Distinguish completed, compensated, blocked, and manual-cleanup
+            outcomes instead of hiding partial failure.
+          </p>
+        </article>
+      </section>
+      <section>
+        <h2>Supported workflow</h2>
+        <ul>
+          <li>Jira Cloud company-managed projects.</li>
+          <li>One standard root issue and one to five subtasks.</li>
+          <li>One text variable per template in the first authoring UI.</li>
+          <li>Root summary, description, and labels; subtask summaries.</li>
+          <li>
+            Project-admin templates and private per-user execution receipts.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Permissions</h2>
+        <p>
+          Tree creation runs as the current Jira user. It requires Create
+          Issues, Edit Issues, and Delete Issues so recovery markers can be
+          removed and partial trees can be compensated. Template management
+          requires project administration permission.
+        </p>
+      </section>
+      <section>
+        <h2>Honest product boundary</h2>
+        <p>
+          Jira does not expose transactional issue creation. The app performs
+          best-effort reverse-order compensation and reports
+          <code>manual_cleanup_required</code> when it cannot prove a clean
+          result. It does not claim guaranteed rollback or zero orphan issues.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>
+          Provided by Leopold Saint. Contact:
+          <a href="mailto:leo.saint.dior@gmail.com">leo.saint.dior@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" role="img" aria-labelledby="title description">
+  <title id="title">Verified Issue Trees logo</title>
+  <desc id="description">A verified root node connected to two child nodes.</desc>
+  <rect x="4" y="4" width="136" height="136" rx="24" fill="#17221f"/>
+  <path d="M72 65V82M72 82H43V98M72 82H101V98" fill="none" stroke="#d9e5df" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="47" y="28" width="50" height="42" rx="10" fill="#57d5a0"/>
+  <path d="m61 49 8 8 16-18" fill="none" stroke="#17221f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="43" cy="108" r="16" fill="#ff8d6b"/>
+  <circle cx="101" cy="108" r="16" fill="#f2c94c"/>
+  <circle cx="43" cy="108" r="5" fill="#17221f"/>
+  <circle cx="101" cy="108" r="5" fill="#17221f"/>
+</svg>
