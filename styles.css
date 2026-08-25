@@ -268,4 +268,57 @@ footer p {
     display: block;
     overflow-x: auto;
   }
+
+  .pricing-table {
+    display: block;
+    overflow: visible;
+  }
+
+  .pricing-table thead {
+    display: none;
+  }
+
+  .pricing-table,
+  .pricing-table tbody,
+  .pricing-table tr,
+  .pricing-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pricing-table tr {
+    margin-bottom: 16px;
+    border: 1px solid var(--line);
+  }
+
+  .pricing-table td {
+    display: grid;
+    grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .pricing-table td::before {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .pricing-table td:nth-child(1)::before {
+    content: "User band";
+  }
+
+  .pricing-table td:nth-child(2)::before {
+    content: "Monthly rate";
+  }
+
+  .pricing-table td:nth-child(3)::before {
+    content: "Monthly total";
+  }
+
+  .pricing-table td:nth-child(4)::before {
+    content: "Annual total";
+  }
 }
