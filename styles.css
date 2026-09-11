@@ -183,6 +183,18 @@ main {
   color: var(--ink);
 }
 
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.hero .text-link {
+  color: #ffffff;
+  font-weight: 700;
+}
+
 section + section {
   margin-top: 56px;
   padding-top: 48px;
@@ -224,6 +236,22 @@ li {
 
 .feature:nth-child(3) {
   border-color: var(--yellow);
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.use-case-grid h3 {
+  margin-top: 0;
+}
+
+.cta-band {
+  padding: 40px;
+  border-top: 0;
+  background: #e7f7ef;
 }
 
 .feature h2,
@@ -292,6 +320,15 @@ footer p {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .use-case-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cta-band {
+    padding: 28px 20px;
   }
 
   table {
