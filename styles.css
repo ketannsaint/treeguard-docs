@@ -153,6 +153,36 @@ main {
   display: block;
 }
 
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-top: 14px;
+  padding: 0 16px;
+  border-radius: 4px;
+  background: var(--ink);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  background: var(--green);
+  color: #ffffff;
+}
+
+.hero .button-link {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.hero .button-link:hover,
+.hero .button-link:focus-visible {
+  background: #ffffff;
+  color: var(--ink);
+}
+
 section + section {
   margin-top: 56px;
   padding-top: 48px;
