@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A practical guide to reusable Jira subtask templates, including native Automation tradeoffs, variables, due dates, and verification."
+    />
+    <link
+      rel="canonical"
+      href="https://ketannsaint.github.io/treeguard-docs/jira-subtask-templates.html"
+    />
+    <title>Jira Subtask Templates: A Practical Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="treeguard-logo.svg" alt="" /><span
+            >Verified Issue Trees</span
+          ></a
+        >
+        <nav aria-label="Documentation">
+          <a href="index.html">Documentation</a
+          ><a href="pricing.html">Pricing</a><a href="support.html">Support</a
+          ><a href="security.html">Security</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Jira template guide</p>
+          <h1>Jira subtask templates</h1>
+          <p>
+            Reuse a dependable checklist without rebuilding the same subtasks on
+            every parent issue.
+          </p>
+        </div>
+        <img src="treeguard-logo.svg" alt="Verified issue tree" />
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>What a useful subtask template stores</h2>
+        <p>
+          At minimum, a template should preserve each subtask summary and its
+          parent relationship. Operational templates often also need labels,
+          relative due dates, assignment rules, and run-time values such as a
+          release number, customer, region, or new starter name.
+        </p>
+        <p>
+          Keep templates small enough to review before creation. A concise
+          checklist is easier to maintain than a hidden rule that creates a
+          large graph of work items.
+        </p>
+      </section>
+      <section>
+        <h2>Native Automation or an app?</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Need</th>
+              <th>Best starting point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Always create the same subtasks after an event</td>
+              <td>Jira Automation</td>
+            </tr>
+            <tr>
+              <td>Let a user choose a process from the issue view</td>
+              <td>Reusable template</td>
+            </tr>
+            <tr>
+              <td>Enter values before creating work</td>
+              <td>Reusable template</td>
+            </tr>
+            <tr>
+              <td>Inspect an audit trail for a single rule</td>
+              <td>Jira Automation</td>
+            </tr>
+            <tr>
+              <td>Verify every created issue and parent link</td>
+              <td>TreeGuard</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section>
+        <h2>A safe template workflow</h2>
+        <ol>
+          <li>Name the repeatable process, not the team that owns it.</li>
+          <li>Use clear action summaries such as "Run regression suite".</li>
+          <li>Add only the run-time values that genuinely change.</li>
+          <li>Validate issue types and required fields before creation.</li>
+          <li>Verify the parent of every created subtask after creation.</li>
+          <li>Keep a visible receipt when cleanup cannot be completed.</li>
+        </ol>
+      </section>
+      <section class="cta-band">
+        <h2>Apply a template without leaving the issue</h2>
+        <p>
+          TreeGuard adds the selected subtask tree from the Jira issue view and
+          records the verified result.
+        </p>
+        <a
+          class="button-link"
+          href="https://marketplace.atlassian.com/apps/1507871903"
+          target="_blank"
+          rel="noreferrer"
+          >Try it free</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div><p>Provided by Leopold Saint.</p></div>
+    </footer>
+  </body>
+</html>

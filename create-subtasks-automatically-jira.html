@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How to create subtasks automatically in Jira with native Automation or a reusable, verified subtask template."
+    />
+    <link
+      rel="canonical"
+      href="https://ketannsaint.github.io/treeguard-docs/create-subtasks-automatically-jira.html"
+    />
+    <title>How to Create Subtasks Automatically in Jira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="treeguard-logo.svg" alt="" /><span
+            >Verified Issue Trees</span
+          ></a
+        >
+        <nav aria-label="Documentation">
+          <a href="index.html">Documentation</a
+          ><a href="pricing.html">Pricing</a><a href="support.html">Support</a
+          ><a href="security.html">Security</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Jira workflow guide</p>
+          <h1>Create subtasks automatically in Jira</h1>
+          <p>
+            Choose between a native Automation rule and a reusable subtask
+            template based on how the work begins and how much control you need.
+          </p>
+        </div>
+        <img src="treeguard-logo.svg" alt="Verified issue tree" />
+      </div>
+    </header>
+    <main>
+      <div class="notice">
+        <strong>Use native Jira Automation first when it fits.</strong> It is
+        the simplest option when every matching issue should receive the same
+        subtasks without a person choosing a template.
+      </div>
+      <section>
+        <h2>Option 1: Jira Automation</h2>
+        <ol>
+          <li>Create a project automation rule.</li>
+          <li>Choose a trigger such as work item created or status changed.</li>
+          <li>Add one Create sub-task action for each required task.</li>
+          <li>
+            Test the rule in a non-production project and inspect its audit log.
+          </li>
+        </ol>
+        <p>
+          This works well for a fixed checklist tied to a predictable event. It
+          becomes harder to manage when people need to choose among processes,
+          enter values at run time, preview the tree, or understand a partial
+          failure across several create actions.
+        </p>
+      </section>
+      <section>
+        <h2>Option 2: a reusable subtask template</h2>
+        <p>
+          A template is a better fit when a user should decide when to apply a
+          process. With TreeGuard, a project administrator defines the subtask
+          summaries and run-time values once. A user then opens an issue,
+          selects <strong>Add subtasks from template</strong>, reviews the
+          result, and starts the run.
+        </p>
+        <p>
+          TreeGuard checks create metadata and required fields before the first
+          mutation. It creates each issue in order, reads it back, verifies the
+          configured values and parent link, and attempts reverse cleanup if a
+          later step fails.
+        </p>
+      </section>
+      <section>
+        <h2>Example: release checklist</h2>
+        <pre><code>Cut release branch for {{version}} | due=+1 | assign=me
+Run regression suite for {{version}} | due=+2
+Update release notes for {{version}} | due=+3
+Deploy {{version}} to production | due=+4</code></pre>
+        <p>
+          The person running the template supplies the version once. Due dates
+          are calculated from the run date, and <code>assign=me</code> assigns
+          that task to the runner.
+        </p>
+      </section>
+      <section class="cta-band">
+        <h2>Run it from the issue you are working on</h2>
+        <p>
+          Start a 30-day evaluation of Subtask Templates &amp; Verified Issue
+          Trees for Jira. Sites with up to 10 users are free.
+        </p>
+        <a
+          class="button-link"
+          href="https://marketplace.atlassian.com/apps/1507871903"
+          target="_blank"
+          rel="noreferrer"
+          >Try it free</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div><p>Provided by Leopold Saint.</p></div>
+    </footer>
+  </body>
+</html>

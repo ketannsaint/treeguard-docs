@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="How to build a Jira issue template with subtasks, including standard parent trees and Epic to child issue to subtask templates."
+    />
+    <link
+      rel="canonical"
+      href="https://ketannsaint.github.io/treeguard-docs/jira-issue-template-with-subtasks.html"
+    />
+    <title>How to Build a Jira Issue Template With Subtasks</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="treeguard-logo.svg" alt="" /><span
+            >Verified Issue Trees</span
+          ></a
+        >
+        <nav aria-label="Documentation">
+          <a href="index.html">Documentation</a
+          ><a href="pricing.html">Pricing</a><a href="support.html">Support</a
+          ><a href="security.html">Security</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Jira template guide</p>
+          <h1>Build a Jira issue template with subtasks</h1>
+          <p>
+            Model a repeatable parent-and-subtask process, or a two-level Epic,
+            without losing the hierarchy during creation.
+          </p>
+        </div>
+        <img src="treeguard-logo.svg" alt="Verified issue tree" />
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Choose the smallest useful tree</h2>
+        <p>
+          Use a standard issue plus subtasks when one owner coordinates a short
+          checklist. Use an Epic plus child issues and their subtasks when the
+          process has independently owned work streams. Avoid adding levels
+          merely to make the template look comprehensive.
+        </p>
+      </section>
+      <section>
+        <h2>Preserve Jira's hierarchy rules</h2>
+        <p>
+          A standard Jira issue can contain subtasks. An Epic can contain
+          standard child issues, which can each contain subtasks. The available
+          issue types vary by project, so a reusable template should validate
+          the live project's create metadata rather than assuming names such as
+          Story, Task, or Sub-task always exist.
+        </p>
+      </section>
+      <section>
+        <h2>Create parent first, then verify each link</h2>
+        <ol>
+          <li>Validate every issue type and required field.</li>
+          <li>Create and verify the root before creating its children.</li>
+          <li>Create each child only after its parent has been confirmed.</li>
+          <li>Read each issue back and compare its configured fields.</li>
+          <li>On failure, delete created descendants before their parents.</li>
+        </ol>
+        <p>
+          TreeGuard follows this order and stores a private execution receipt.
+          Jira has no transaction for multi-issue creation, so cleanup is best
+          effort and any unresolved result remains visible.
+        </p>
+      </section>
+      <section class="cta-band">
+        <h2>Save the tree once</h2>
+        <p>
+          Create a verified standard or Epic template and reuse it from the
+          project page or an existing Jira issue.
+        </p>
+        <a
+          class="button-link"
+          href="https://marketplace.atlassian.com/apps/1507871903"
+          target="_blank"
+          rel="noreferrer"
+          >Try it free</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div><p>Provided by Leopold Saint.</p></div>
+    </footer>
+  </body>
+</html>

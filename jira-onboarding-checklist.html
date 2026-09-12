@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Build a reusable Jira onboarding checklist with named variables, relative due dates, assignment, and verified subtasks."
+    />
+    <link
+      rel="canonical"
+      href="https://ketannsaint.github.io/treeguard-docs/jira-onboarding-checklist.html"
+    />
+    <title>Build a Reusable Jira Onboarding Checklist</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="index.html"
+          ><img src="treeguard-logo.svg" alt="" /><span
+            >Verified Issue Trees</span
+          ></a
+        >
+        <nav aria-label="Documentation">
+          <a href="index.html">Documentation</a
+          ><a href="pricing.html">Pricing</a><a href="support.html">Support</a
+          ><a href="security.html">Security</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Jira checklist guide</p>
+          <h1>Build a reusable Jira onboarding checklist</h1>
+          <p>
+            Turn the work around each new starter into a short, owned set of
+            Jira subtasks with dates relative to the start of the run.
+          </p>
+        </div>
+        <img src="treeguard-logo.svg" alt="Verified issue tree" />
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Start with outcomes, not departments</h2>
+        <p>
+          A useful onboarding parent represents one new starter. Its subtasks
+          should describe completed outcomes: accounts created, hardware
+          assigned, induction booked, buddy introduced, and first-week review
+          completed. Keep sensitive HR data out of task summaries.
+        </p>
+      </section>
+      <section>
+        <h2>Example template</h2>
+        <p>Define two run-time values:</p>
+        <pre><code>starter_name = New starter
+start_date = Start date</code></pre>
+        <p>Then define the reusable subtask outline:</p>
+        <pre><code>Create accounts for {{starter_name}} | due=+0 | assign=me
+Assign hardware to {{starter_name}} | due=+1
+Book induction sessions for {{starter_name}} | due=+2
+Pair {{starter_name}} with a buddy | due=+3
+Week one review with {{starter_name}} | due=+5</code></pre>
+      </section>
+      <section>
+        <h2>Run the checklist</h2>
+        <ol>
+          <li>Create the onboarding parent issue.</li>
+          <li>
+            Open <strong>Add subtasks from template</strong> on that issue.
+          </li>
+          <li>
+            Select the onboarding template and enter the starter's details.
+          </li>
+          <li>Review the generated summaries, then run the preflight.</li>
+          <li>Use the receipt to confirm every subtask and parent link.</li>
+        </ol>
+      </section>
+      <section class="cta-band">
+        <h2>Start with the packaged onboarding template</h2>
+        <p>
+          TreeGuard includes this starter so a project administrator can adapt
+          it and save the first reusable process in minutes.
+        </p>
+        <a
+          class="button-link"
+          href="https://marketplace.atlassian.com/apps/1507871903"
+          target="_blank"
+          rel="noreferrer"
+          >Try it free</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div><p>Provided by Leopold Saint.</p></div>
+    </footer>
+  </body>
+</html>
