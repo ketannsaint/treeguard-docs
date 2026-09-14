@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" role="img" aria-labelledby="title description">
+  <title id="title">Verified Label Manager mark</title>
+  <desc id="description">A label shape with a verification check</desc>
+  <rect width="144" height="144" rx="24" fill="#17221f" />
+  <path d="M30 36h51l33 33-42 42-42-42V36Z" fill="#57d5a0" />
+  <circle cx="50" cy="56" r="8" fill="#17221f" />
+  <path d="m51 79 10 10 26-28" fill="none" stroke="#17221f" stroke-linecap="round" stroke-linejoin="round" stroke-width="9" />
+</svg>

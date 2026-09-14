@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy | Verified Label Manager for Jira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="verified-label-manager.html">
+          <img src="labelguard-mark.svg" alt="" />
+          <span>Verified Label Manager</span>
+        </a>
+        <nav aria-label="Verified Label Manager">
+          <a href="verified-label-manager.html">Live evidence</a>
+          <a href="verified-label-manager-support.html">Support</a>
+          <a href="verified-label-manager-privacy.html" aria-current="page"
+            >Privacy</a
+          >
+          <a href="verified-label-manager-deletion.html">Data deletion</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Effective 2026-09-14</p>
+          <h1>Privacy Policy</h1>
+          <p>
+            Verified Label Manager for Jira is operated by Leopold Saint.
+            Privacy contact:
+            <a href="mailto:support@apps.themoonknows.com"
+              >support@apps.themoonknows.com</a
+            >.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Scope</h2>
+        <p>
+          This policy explains how Verified Label Manager for Jira processes
+          information when installed in Jira Cloud. The app is built entirely on
+          Atlassian Forge and has no remote backend, advertising, or external
+          analytics.
+        </p>
+      </section>
+      <section>
+        <h2>Information processed</h2>
+        <ul>
+          <li>The JQL scope entered for an operation.</li>
+          <li>Source and target label names.</li>
+          <li>
+            An operation journal containing the operation kind, scope, steps,
+            status, and timestamps.
+          </li>
+          <li>
+            For selected issues, the Jira issue ID, issue key, and exact labels
+            before and after the change.
+          </li>
+          <li>
+            The current Atlassian account ID during a request. The raw account
+            ID is not stored; a SHA-256 owner key isolates each administrator's
+            records.
+          </li>
+        </ul>
+        <p>
+          Jira issue keys, labels, and JQL text may contain personal information
+          chosen by the customer. The app does not read or store issue
+          summaries, descriptions, comments, attachments, custom fields, or
+          reporter and assignee identities.
+        </p>
+      </section>
+      <section>
+        <h2>Purpose and hosting</h2>
+        <p>
+          The app uses this information to preview a change, perform the
+          approved Jira bulk edit, verify each issue, compensate an operation,
+          resume interrupted work, and show an outcome or CSV export to the
+          administrator who started it. Compute and storage are provided by
+          Atlassian Forge. The app does not send customer data to vendor-hosted
+          infrastructure or third-party analytics, advertising, or AI services.
+        </p>
+      </section>
+      <section>
+        <h2>Authorization and retention</h2>
+        <p>
+          Protected actions require Administer Jira and Make bulk changes. The
+          server derives every operation identity from the caller, so one user
+          cannot read, resume, undo, or export another user's operation. Queued
+          work uses the immutable plan recorded when the administrator approved
+          it.
+        </p>
+        <ul>
+          <li>Operation records expire 180 days after their latest write.</li>
+          <li>
+            Administrators can delete their own operation history at any time.
+          </li>
+          <li>Forge retains hosted storage for 28 days after uninstall.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact and security</h2>
+        <p>
+          Send privacy, access, or deletion questions to
+          <a href="mailto:support@apps.themoonknows.com"
+            >support@apps.themoonknows.com</a
+          >. Report suspected vulnerabilities to
+          <a href="mailto:security@apps.themoonknows.com"
+            >security@apps.themoonknows.com</a
+          >. Include the Jira site but never send passwords or API tokens.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>Material changes will update this policy's effective date.</p>
+      </div>
+    </footer>
+  </body>
+</html>

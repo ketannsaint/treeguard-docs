@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Deletion | Verified Label Manager for Jira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="verified-label-manager.html">
+          <img src="labelguard-mark.svg" alt="" />
+          <span>Verified Label Manager</span>
+        </a>
+        <nav aria-label="Verified Label Manager">
+          <a href="verified-label-manager.html">Live evidence</a>
+          <a href="verified-label-manager-support.html">Support</a>
+          <a href="verified-label-manager-privacy.html">Privacy</a>
+          <a href="verified-label-manager-deletion.html" aria-current="page"
+            >Data deletion</a
+          >
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">User controls</p>
+          <h1>Data Deletion</h1>
+          <p>Remove private operation history without changing Jira labels.</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Delete your operation history</h2>
+        <ol>
+          <li>
+            Open Jira settings -> Apps -> Verified Label Manager for Jira.
+          </li>
+          <li>Scroll to <strong>Recent operations</strong>.</li>
+          <li>Select <strong>Delete my operation history</strong>.</li>
+        </ol>
+        <p>
+          This permanently removes the current administrator's operation
+          journals, change chunks, and history summaries. It does not change
+          Jira issue labels. Use <strong>Undo this operation</strong> before
+          deleting history if you want labels restored.
+        </p>
+      </section>
+      <section>
+        <h2>Automatic expiry and uninstall</h2>
+        <p>
+          Every record the app writes carries a 180-day time to live. A Jira
+          site administrator can uninstall the app through Atlassian
+          administration. Forge retains hosted storage for 28 days after
+          uninstall.
+        </p>
+      </section>
+      <section>
+        <h2>Request assistance</h2>
+        <p>
+          Contact
+          <a href="mailto:support@apps.themoonknows.com"
+            >support@apps.themoonknows.com</a
+          >
+          and provide the Jira Cloud site hostname. Do not provide passwords or
+          API tokens. The vendor may ask the site administrator to verify
+          authority before acting on site data.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div><p>Never send passwords or API tokens with a data request.</p></div>
+    </footer>
+  </body>
+</html>

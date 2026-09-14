@@ -268,6 +268,55 @@ li {
   margin-top: 0;
 }
 
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.metric {
+  padding: 20px;
+  border-top: 5px solid var(--mint);
+  background: var(--surface);
+  box-shadow: 0 8px 26px rgba(23, 34, 31, 0.07);
+}
+
+.metric:nth-child(2) {
+  border-color: var(--coral);
+}
+
+.metric:nth-child(3) {
+  border-color: var(--yellow);
+}
+
+.metric:nth-child(4) {
+  border-color: #7ab4e8;
+}
+
+.metric strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.metric span {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.callout {
+  padding: 24px;
+  border-left: 5px solid var(--mint);
+  background: #edf5f1;
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
 .cta-band {
   padding: 40px;
   border-top: 0;
@@ -335,6 +384,10 @@ footer p {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .use-case-grid {

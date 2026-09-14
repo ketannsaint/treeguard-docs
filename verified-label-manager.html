@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Live scale evidence for Verified Label Manager for Jira: 2,000 issues, zero mismatches, and zero HTTP 429 responses."
+    />
+    <title>Verified Label Manager for Jira | Live evidence</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="verified-label-manager.html">
+          <img src="labelguard-mark.svg" alt="" />
+          <span>Verified Label Manager</span>
+        </a>
+        <nav aria-label="Verified Label Manager">
+          <a href="verified-label-manager.html" aria-current="page"
+            >Live evidence</a
+          >
+          <a href="verified-label-manager-support.html">Support</a>
+          <a href="verified-label-manager-privacy.html">Privacy</a>
+          <a href="verified-label-manager-deletion.html">Data deletion</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Jira Cloud - measured 2026-09-13</p>
+          <h1>Verified Label Manager for Jira</h1>
+          <p>
+            Bulk rename, merge, and remove Jira labels with a mandatory dry run,
+            exact per-issue verification, and compensating undo.
+          </p>
+          <p class="hero-actions">
+            <a
+              class="button-link"
+              href="mailto:support@apps.themoonknows.com?subject=Verified%20Label%20Manager%20pilot"
+              >Discuss a controlled pilot</a
+            >
+            <a class="text-link" href="verified-label-manager-support.html"
+              >Contact support</a
+            >
+          </p>
+        </div>
+        <img src="labelguard-mark.svg" alt="Verified Label Manager mark" />
+      </div>
+    </header>
+    <main>
+      <div class="notice">
+        <strong>Evidence before availability</strong>
+        This is a measured live report, not a Marketplace availability claim.
+        The app is not yet listed. The contact for pilot questions is
+        <a href="mailto:support@apps.themoonknows.com"
+          >support@apps.themoonknows.com</a
+        >.
+      </div>
+
+      <section aria-label="Headline results">
+        <div class="metric-grid">
+          <article class="metric">
+            <strong>2,000</strong>
+            <span>issues in the scale run</span>
+          </article>
+          <article class="metric">
+            <strong>0</strong>
+            <span>verification mismatches</span>
+          </article>
+          <article class="metric">
+            <strong>0</strong>
+            <span>HTTP 429 responses</span>
+          </article>
+          <article class="metric">
+            <strong>~49 min</strong>
+            <span>complete forward and reverse run</span>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>What was measured</h2>
+        <p>
+          The run used a disposable company-managed Jira project and the same
+          REST operations used by the Forge client. It created 2,000 fixture
+          issues, applied a label change in two 1,000-issue bulk tasks, verified
+          every issue, reversed the change, and deleted the project.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Phase</th>
+              <th>Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fixture creation</td>
+              <td>830.4 seconds, 40 batches of 50</td>
+            </tr>
+            <tr>
+              <td>Search</td>
+              <td>4.2 seconds, 20 pages of 100</td>
+            </tr>
+            <tr>
+              <td>Bulk add</td>
+              <td>
+                0.50 / 0.47 seconds to submit; 272 / 252 seconds to complete
+              </td>
+            </tr>
+            <tr>
+              <td>Bulk remove</td>
+              <td>
+                0.65 / 0.41 seconds to submit; 264 / 270 seconds to complete
+              </td>
+            </tr>
+            <tr>
+              <td>Verification</td>
+              <td>3.8 seconds; 2,000 / 2,000 correct</td>
+            </tr>
+            <tr>
+              <td>Reverse operation</td>
+              <td>1,056 seconds; exact original labels restored</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Why the queue exists</h2>
+        <div class="callout">
+          <p>
+            Submitting a Jira bulk task took less than a second. Processing a
+            1,000-issue task took 250-272 seconds. That is far beyond Forge's
+            25-second invocation limit, so the app submits, polls, and records
+            progress through an asynchronous queue instead of pretending the
+            edit is synchronous.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Two defects found before release</h2>
+        <p>
+          The live boundary test found two defects that the 99-test unit suite
+          could not reach. Both were fixed and re-verified before this report
+          was written.
+        </p>
+        <ul>
+          <li>
+            The queue consumer used the deprecated event contract for the
+            installed events package. A run failed at queue submission; the
+            manifest and handler now use the current contract.
+          </li>
+          <li>
+            Journal integrity depended on object key order surviving a Forge KVS
+            round trip. The digest now canonicalizes nested object keys, and a
+            reordering regression test covers the platform behavior.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What this does and does not establish</h2>
+        <div class="use-case-grid">
+          <article>
+            <h3>Established</h3>
+            <ul>
+              <li>Exact label changes at 2,000 issues.</li>
+              <li>Unrelated labels survived the forward operation.</li>
+              <li>The reverse pass restored every original label set.</li>
+              <li>Jira did not rate-limit the measured five-second polls.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Still bounded</h3>
+            <ul>
+              <li>Each operation is limited to 2,000 issues.</li>
+              <li>The operator needs Administer Jira and Make bulk changes.</li>
+              <li>
+                Undo is compensation, not a transactional database rollback.
+              </li>
+              <li>
+                A label with no issues cannot be deleted through Jira's API.
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h3>Not claimed here</h3>
+            <ul>
+              <li>That every permission or licensing path is live-tested.</li>
+              <li>That inaccessible issues can be changed or recovered.</li>
+              <li>
+                That the app is available for general Marketplace install.
+              </li>
+              <li>That this one run predicts a customer's exact runtime.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <h2>Have a label cleanup worth measuring?</h2>
+        <p>
+          Contact the vendor from the role-based support channel to discuss a
+          disposable-project pilot and the limits that matter to your Jira site.
+        </p>
+        <a
+          class="button-link"
+          href="mailto:support@apps.themoonknows.com?subject=Verified%20Label%20Manager%20pilot"
+          >Email support@apps.themoonknows.com</a
+        >
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>
+          Verified Label Manager for Jira is operated by Leopold Saint. Support:
+          <a href="mailto:support@apps.themoonknows.com"
+            >support@apps.themoonknows.com</a
+          >.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
