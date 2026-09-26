@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data deletion | Azure DevOps Sync for Jira</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <a class="brand" href="azure-devops-sync.html">
+          <img src="verified-sync-logo.svg" alt="" />
+          <span>Azure DevOps Sync</span>
+        </a>
+        <nav aria-label="Azure DevOps Sync">
+          <a href="azure-devops-sync.html">Overview</a>
+          <a href="azure-devops-sync-support.html">Support</a>
+          <a href="azure-devops-sync-privacy.html">Privacy</a>
+          <a href="azure-devops-sync-deletion.html" aria-current="page"
+            >Data deletion</a
+          >
+        </nav>
+      </div>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Effective 2026-09-26</p>
+          <h1>Data deletion</h1>
+          <p>
+            How to remove everything Azure DevOps Sync for Jira holds, and what
+            happens to each kind of record.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="notice">
+        <strong>Deleting app data never deletes your work</strong>
+        Removing a connection, or uninstalling the app, deletes only the app's
+        own records. Your Jira issues and your Azure DevOps work items are left
+        exactly as they are. This app never deletes either of them.
+      </div>
+
+      <section>
+        <h2>Delete one linked pair</h2>
+        <p>
+          Open the issue, use the Azure DevOps panel, and choose Unlink. The
+          link record and both of its lookup entries are removed immediately.
+          The issue and the work item are untouched, and neither is changed
+          again after that.
+        </p>
+      </section>
+
+      <section>
+        <h2>Stop all syncing without deleting</h2>
+        <p>
+          In Project settings, open Azure DevOps Sync and choose Pause sync. The
+          app deletes the service hooks it created in your Azure DevOps project
+          and discards the webhook credentials it generated. Nothing is
+          synchronised until you turn it back on.
+        </p>
+      </section>
+
+      <section>
+        <h2>Delete everything for a project</h2>
+        <p>
+          Pause sync, then uninstall the app. Atlassian removes the app's Forge
+          storage, which includes the connection settings, all link records, the
+          event journal, and the encrypted credentials.
+        </p>
+      </section>
+
+      <section>
+        <h2>What is deleted, and when</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Record</th>
+              <th>Removed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Link record for one pair</td>
+              <td>Immediately when you unlink that issue</td>
+            </tr>
+            <tr>
+              <td>Azure DevOps service hooks and webhook credentials</td>
+              <td>Immediately when you pause sync</td>
+            </tr>
+            <tr>
+              <td>Event journal entries</td>
+              <td>90 days after their last write, automatically</td>
+            </tr>
+            <tr>
+              <td>
+                Connection settings, all link records, and stored credentials
+              </td>
+              <td>
+                On uninstall. Atlassian retains Forge hosted storage for 28 days
+                afterwards, then deletes it.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Revoke the credential yourself</h2>
+        <p>
+          The app cannot revoke an Azure DevOps personal access token or a
+          Microsoft Entra client secret on your behalf, and uninstalling does
+          not revoke it either. Revoke it in Azure DevOps or in your Entra
+          tenant. Do this first if you believe a credential has been exposed.
+        </p>
+      </section>
+
+      <section>
+        <h2>Ask for a deletion in writing</h2>
+        <p>
+          Email
+          <a href="mailto:support@apps.themoonknows.com"
+            >support@apps.themoonknows.com</a
+          >
+          with your Jira Cloud hostname and the Jira project key. Requests are
+          answered within two business days. Never include an API token in the
+          request.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <p>Material changes will update this page's effective date.</p>
+      </div>
+    </footer>
+  </body>
+</html>
