@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144" role="img" aria-labelledby="title description">
+  <title id="title">Verified Sync logo</title>
+  <desc id="description">Two linked records with a two-way arrow and a verified check.</desc>
+  <rect x="4" y="4" width="136" height="136" rx="24" fill="#17221f"/>
+  <rect x="18" y="26" width="42" height="36" rx="9" fill="#57d5a0"/>
+  <rect x="84" y="26" width="42" height="36" rx="9" fill="#f2c94c"/>
+  <path d="M60 38h24M84 50H60" fill="none" stroke="#d9e5df" stroke-width="6" stroke-linecap="round"/>
+  <path d="m78 32 7 6-7 6M66 44l-7 6 7 6" fill="none" stroke="#d9e5df" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="72" cy="101" r="27" fill="#57d5a0"/>
+  <path d="m60 101 9 9 18-19" fill="none" stroke="#17221f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
