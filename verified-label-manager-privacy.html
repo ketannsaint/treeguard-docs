@@ -24,7 +24,7 @@
       </div>
       <div class="hero">
         <div>
-          <p class="eyebrow">Effective 2026-09-14</p>
+          <p class="eyebrow">Effective 2026-10-09</p>
           <h1>Privacy Policy</h1>
           <p>
             Verified Label Manager for Jira is operated by Leopold Saint.
@@ -86,11 +86,17 @@
       <section>
         <h2>Authorization and retention</h2>
         <p>
-          Protected actions require Administer Jira and Make bulk changes. The
-          server derives every operation identity from the caller, so one user
-          cannot read, resume, undo, or export another user's operation. Queued
-          work uses the immutable plan recorded when the administrator approved
-          it.
+          Interactive preview, start, resume, and undo require Administer Jira
+          and Make bulk changes. Status and CSV reads require an active license
+          and operation ownership, but do not freshly check those permissions.
+          Owner history deletion remains available without an active license.
+          The server derives every operation identity from the caller, so one
+          user cannot read, resume, undo, or export another user's operation.
+          Queued work uses the immutable plan recorded when the administrator
+          approved it; it does not recheck that user's current permissions.
+          Later permission revocation is not guaranteed to cancel this work.
+          Undo restores original label sets and can overwrite subsequent label
+          edits; it is not transactional rollback.
         </p>
         <ul>
           <li>Operation records expire 180 days after their latest write.</li>
